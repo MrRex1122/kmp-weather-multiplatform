@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+set -e
+DIR="$(cd "$(dirname "$0")" && pwd)"
+if [ -n "$JAVA_HOME" ]; then
+  JAVA_EXE="$JAVA_HOME/bin/java"
+else
+  JAVA_EXE="java"
+fi
+exec "$JAVA_EXE" -classpath "$DIR/gradle/wrapper/gradle-wrapper.jar:$DIR/gradle/wrapper/gradle-wrapper-shared.jar" org.gradle.wrapper.GradleWrapperMain "$@"
