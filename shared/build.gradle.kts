@@ -1,23 +1,28 @@
-﻿plugins {
+plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("org.jetbrains.kotlin.native.cocoapods")
     id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 kotlin {
     androidTarget()
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
 
-    cocoapods {
-        summary = "Shared weather domain for Android and iOS"
-        homepage = "https://example.com"
-        ios.deploymentTarget = "14.0"
-        podfile = project.file("../iosApp/Podfile")
-        framework {
-            baseName = "shared"
-            isStatic = true
+    val isMacOs = System.getProperty("os.name").contains("Mac", ignoreCase = true)
+    if (isMacOs) {
+        iosX64()
+        iosArm64()
+        iosSimulatorArm64()
+
+        cocoapods {
+            summary = "Shared weather domain for Android and iOS"
+            homepage = "https://example.com"
+            ios.deploymentTarget = "14.0"
+            podfile = project.file("../iosApp/Podfile")
+            framework {
+                baseName = "shared"
+                isStatic = true
+            }
         }
     }
 
