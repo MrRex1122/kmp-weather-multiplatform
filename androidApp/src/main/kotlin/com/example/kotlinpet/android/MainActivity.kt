@@ -52,6 +52,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun WeatherApp() {
     val viewModel: MainViewModel = viewModel()
