@@ -47,9 +47,11 @@ kotlin {
                 implementation("io.ktor:ktor-client-okhttp:2.3.12")
             }
         }
-        val iosMain by getting {
-            dependencies {
-                implementation("io.ktor:ktor-client-darwin:2.3.12")
+        if (isMacOs) {
+            val iosMain by getting {
+                dependencies {
+                    implementation("io.ktor:ktor-client-darwin:2.3.12")
+                }
             }
         }
     }
