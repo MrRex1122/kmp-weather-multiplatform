@@ -6,5 +6,5 @@ if defined JAVA_HOME (
 ) else (
   set JAVA_EXE=java
 )
-"%JAVA_EXE%" -classpath "%DIR%gradle\wrapper\gradle-wrapper.jar;%DIR%gradle\wrapper\gradle-wrapper-shared.jar" org.gradle.wrapper.GradleWrapperMain %*
+"%JAVA_EXE%" -classpath "%DIR%gradle\wrapper\gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain %*
 endlocal

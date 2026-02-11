@@ -6,4 +6,4 @@ if [ -n "$JAVA_HOME" ]; then
 else
   JAVA_EXE="java"
 fi
-exec "$JAVA_EXE" -classpath "$DIR/gradle/wrapper/gradle-wrapper.jar:$DIR/gradle/wrapper/gradle-wrapper-shared.jar" org.gradle.wrapper.GradleWrapperMain "$@"
+exec "$JAVA_EXE" -classpath "$DIR/gradle/wrapper/gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain "$@"
