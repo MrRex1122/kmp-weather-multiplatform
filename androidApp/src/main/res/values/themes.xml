@@ -1,5 +1,5 @@
 ﻿<resources>
-    <style name="Theme.KotlinPetWeather" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.KotlinPetWeather" parent="@android:style/Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>
